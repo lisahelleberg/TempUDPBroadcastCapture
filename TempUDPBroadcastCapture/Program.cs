@@ -20,7 +20,7 @@ namespace TempUDPBroadcastCapture
 
         private static void Start()
         {
-            using (var reciever = new ServiceReference1.TempServiceClient("BasicHttpBinding_ITempService"))
+            using (var reciever = new TempServiceReference1.TempServiceClient("BasicHttpBinding_ITempService"))
             {
                 using (UdpClient client = new UdpClient(new IPEndPoint(IPAddress.Any, port)))
                 {
@@ -31,9 +31,10 @@ namespace TempUDPBroadcastCapture
                         byte[] datagramRecieved = client.Receive(ref remoteEndPoint);
 
                         string str = Encoding.ASCII.GetString(datagramRecieved, 0, datagramRecieved.Length);
-                        Console.WriteLine("Recieves {0} bytes from {1} port {2} message {3}", datagramRecieved.Length, 
+                        Console.WriteLine("Recieves {0} bytes from {1} port {2} message {3}", datagramRecieved.Length,
                             remoteEndPoint.Address, remoteEndPoint.Port, str);
 
+                        reciever.PostTempToDB(str); // Denne sætning sender data til databasen
                     }
                 }
             }
