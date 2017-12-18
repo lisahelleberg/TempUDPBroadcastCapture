@@ -20,7 +20,7 @@ namespace TempUDPBroadcastCapture
 
         private static void Start()
         {
-            using (var reciever = new TempServiceReference1.TempServiceClient("BasicHttpBinding_ITempService"))
+            using (var reciever = new TempServiceReference1Azure.TempServiceClient("BasicHttpBinding_ITempService"))
             {
                 using (UdpClient client = new UdpClient(new IPEndPoint(IPAddress.Any, port)))
                 {

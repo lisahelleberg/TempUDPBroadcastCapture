@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempUDPBroadcastCapture.ServiceReference1 {
+namespace TempUDPBroadcastCapture.TempServiceReference1Azure {
     using System.Runtime.Serialization;
     using System;
     
@@ -91,7 +91,7 @@ namespace TempUDPBroadcastCapture.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.ITempService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TempServiceReference1Azure.ITempService")]
     public interface ITempService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITempService/PostTempToDB", ReplyAction="http://tempuri.org/ITempService/PostTempToDBResponse")]
@@ -101,19 +101,19 @@ namespace TempUDPBroadcastCapture.ServiceReference1 {
         System.Threading.Tasks.Task<int> PostTempToDBAsync(string temp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITempService/GetAllTemp", ReplyAction="http://tempuri.org/ITempService/GetAllTempResponse")]
-        TempUDPBroadcastCapture.ServiceReference1.Temp[] GetAllTemp();
+        TempUDPBroadcastCapture.TempServiceReference1Azure.Temp[] GetAllTemp();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITempService/GetAllTemp", ReplyAction="http://tempuri.org/ITempService/GetAllTempResponse")]
-        System.Threading.Tasks.Task<TempUDPBroadcastCapture.ServiceReference1.Temp[]> GetAllTempAsync();
+        System.Threading.Tasks.Task<TempUDPBroadcastCapture.TempServiceReference1Azure.Temp[]> GetAllTempAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITempServiceChannel : TempUDPBroadcastCapture.ServiceReference1.ITempService, System.ServiceModel.IClientChannel {
+    public interface ITempServiceChannel : TempUDPBroadcastCapture.TempServiceReference1Azure.ITempService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TempServiceClient : System.ServiceModel.ClientBase<TempUDPBroadcastCapture.ServiceReference1.ITempService>, TempUDPBroadcastCapture.ServiceReference1.ITempService {
+    public partial class TempServiceClient : System.ServiceModel.ClientBase<TempUDPBroadcastCapture.TempServiceReference1Azure.ITempService>, TempUDPBroadcastCapture.TempServiceReference1Azure.ITempService {
         
         public TempServiceClient() {
         }
@@ -142,11 +142,11 @@ namespace TempUDPBroadcastCapture.ServiceReference1 {
             return base.Channel.PostTempToDBAsync(temp);
         }
         
-        public TempUDPBroadcastCapture.ServiceReference1.Temp[] GetAllTemp() {
+        public TempUDPBroadcastCapture.TempServiceReference1Azure.Temp[] GetAllTemp() {
             return base.Channel.GetAllTemp();
         }
         
-        public System.Threading.Tasks.Task<TempUDPBroadcastCapture.ServiceReference1.Temp[]> GetAllTempAsync() {
+        public System.Threading.Tasks.Task<TempUDPBroadcastCapture.TempServiceReference1Azure.Temp[]> GetAllTempAsync() {
             return base.Channel.GetAllTempAsync();
         }
     }
